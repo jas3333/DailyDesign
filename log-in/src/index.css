@@ -1,173 +1,282 @@
-/* --------- Import Fonts ----------- */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap');
-
-/* ------------ Main Settings ------------- */
 * {
     margin: 0;
     padding: 0;
-    text-decoration: none;
-    list-style: none;
     box-sizing: border-box;
+    text-decoration: none;
 }
-
-/* ----- Variables ------ */
 
 :root {
-    /* ---- Background Colors ---- */
+    --background-dark-brown: #212525;
+    --background-dark-grey: #1e2325;
+    --background-everforest: #1c2c2b;
+    --background-light: #b3b18e;
+    --background-dark: #2c3639;
+    --background-gunblue: #3f4e4f;
+    --background-tan: #a27b5c;
+    --background-white: #fff;
+    --background-light-grey: #bfbccb;
+    --color-darker-grey: #9695ab;
 
-    --bg-color-pink: #ca83bf;
-    --bg-color-dark: #1e2325;
-    --bg-color-everforest: #172021;
-    --bg-color-white: #fff;
-
-    /* ------- Font Colors ------- */
-    --font-color-light: #4b5152;
-
-    /* ------- Misc Colors ------- */
-    --color-light-pink: #f8ecfc;
-    /* -------- Box Sizes -------- */
-
-    --box-sm: 30vw;
-    --box-md: 70vw;
-    --box-lg: 100vw;
+    --font-light-grey: #dcd7c9;
+    --font-light: #939698;
+    --font-dark: #171718;
 }
-
-/* ------------- Body Settings --------------- */
 
 body {
-    display: flex;
-    background: var(--bg-color-pink);
-    font-family: 'Montserrat', sans-serif;
+    background: var(--background-dark);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+        'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--font-light-grey);
 }
 
-.bg-dark {
-    background: var(--bg-color-dark);
+/* ------ Text Styling ------ */
+h1 {
+    font-weight: 400;
+    font-size: 3rem;
 }
 
-.bg-everforest {
-    background: var(--bg-color-everforest);
+h2 {
+    font-weight: 400;
+    font-size: 2rem;
 }
 
-.bg-white {
-    background: var(--bg-color-white);
+h3 {
+    font-weight: 400;
+    font-size: 1.5rem;
 }
 
-.container {
-    display: flex;
-    width: 100vw;
-    justify-content: center;
+h4 {
+    font-weight: 400;
 }
 
-/* -------------- Text Styling --------------- */
-p {
-    font-weight: 300;
+.light {
+    color: var(--font-light);
+    font-weight: 400;
+    font-size: 1.1rem;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-    font-weight: 500;
+.bold {
+    color: var(--font-dark);
+    font-weight: 600;
 }
 
-/* ---------------- Boxes -------------------- */
-.box-sm {
-    display: flex;
-    margin: 10px auto;
-    padding: 1.5rem;
-    border-radius: 15px;
-    width: var(--box-sm);
-}
-.box-sm-col {
-    display: flex;
-    flex-direction: column;
-    margin: 10px auto;
-    padding: 20px;
-    border-radius: 15px;
-    width: var(--box-sm);
-    min-width: 350px;
-}
-.box-md {
-    display: flex;
-    margin: 10px auto;
-    padding: 1.5rem;
-    border-radius: 15px;
-    width: var(--box-md);
-}
-.box-lg {
-    display: flex;
-    margin: 10px auto;
-    padding: 1.5rem;
-    border-radius: 15px;
-    width: var(--box-lg);
-}
-
-/* -------------- Box Shadows --------------- */
-
-.shadow-very-large {
-    box-shadow: 40px 40px 60px black;
-}
-.shadow-lg {
-    box-shadow: 20px 20px 20px black;
-}
-.shadow-md {
-    box-shadow: 10px 10px 15px black;
-}
-.shadow-sm {
-    box-shadow: 2px 2px 10px black;
-}
-
-/* ----------------- Images ------------------ */
-
-.img-sm {
-    width: 50%;
-}
-
-.profile-sm {
-    width: 75px;
-    height: 75px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin: 1rem auto;
-    float: left;
-}
-
-.box-inner h3 {
-    margin-top: 40px;
-    margin-left: 80px;
-}
-.box-inner p {
-    margin-left: 80px;
-}
-
-/* -------------- Buttons ------------------- */
-
-.btn-lg {
-    padding: 20px;
-    width: 300px;
-    margin: 20px auto;
-    box-shadow: 15px 15px 15px var(--color-light-pink);
+/* --------- Input ---------- */
+input {
+    padding: 10px 5px;
+    margin-bottom: 6px;
+    width: 100%;
     border: none;
-    background: linear-gradient(
-        90deg,
-        rgba(209, 11, 255, 1) 49%,
-        rgba(216, 0, 255, 1) 59%,
-        rgba(255, 0, 247, 0.6292717770702031) 100%
-    );
     border-radius: 5px;
 }
-
-/* -------------- Alignment ----------------- */
-
-.set-inline {
-    display: inline;
+/* -------- Buttons --------- */
+.btn {
+    font-size: 1.2rem;
+    font-weight: 300;
+    width: 5.5rem;
+    margin-top: 50px;
+    background-color: transparent;
+    color: var(--font-light-grey);
+    border: none;
+    transition: 200ms ease all;
 }
 
-.align-right {
-    text-align: right;
+.btn-active {
+    color: #fff;
+    border-left: 3px solid var(--background-light);
+    transform: scale(1.02);
 }
 
-.float-right {
-    float: right;
+.log-in {
+    color: var(--font-light-grey);
+    width: 100%;
+    padding: 10px;
+    background-color: transparent;
+    border: solid 1px var(--font-light-grey);
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.log-in:hover {
+    background-color: var(--font-light-grey);
+    color: var(--background-dark);
+}
+.log-in:active {
+    transform: scale(0.98);
+}
+
+.login {
+    border-radius: 5px;
+    margin-top: 10px;
+    display: flex;
+    padding: 10px;
+    width: 100%;
+    cursor: default;
+    user-select: none;
+}
+.login:hover {
+    background-color: var(--font-light-grey);
+    color: var(--background-dark);
+}
+.login:active {
+    transform: scale(0.98);
+}
+
+/* .container-col button { */
+/*     font-size: 1.2rem; */
+/*     font-weight: 300; */
+/*     padding: 2px; */
+/*     margin-top: 50px; */
+/*     background-color: transparent; */
+/*     color: var(--font-light-grey); */
+/*     border: none; */
+/*     transition: 200ms ease all; */
+/* } */
+/**/
+/* .container-col button:hover { */
+/*     border-left: solid 4px var(--font-light-grey); */
+/*     color: #fff; */
+/* } */
+
+/* --------- Boxes ---------- */
+.container-row {
+    display: flex;
+    padding: 30px;
+}
+
+.container-col {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.container-sm {
+    width: 20vw;
+    padding: 30px;
+}
+.container-md {
+    width: 30vw;
+    padding: 30px;
+}
+.container-lg {
+    width: 50vw;
+    padding: 30px;
+}
+/* --------- Shadow --------- */
+
+.shadow-dark-sm {
+    box-shadow: 1px 1px 10px black;
+}
+
+/* -------- Margins --------- */
+.margin-top-sm {
+    margin-top: 20px;
+}
+.margin-top-md {
+    margin-top: 40px;
+}
+.margin-top-lg {
+    margin-top: 80px;
+}
+.margin-top-very-lg {
+    margin-top: 480px;
+}
+
+.margin-left-vsm {
+    margin-left: 10px;
+}
+.margin-left-sm {
+    margin-left: 20px;
+}
+.margin-left-md {
+    margin-left: 40px;
+}
+.margin-left-lg {
+    margin-left: 80px;
+}
+.margin-right-sm {
+    margin-right: 20px;
+}
+.margin-right-md {
+    margin-right: 40px;
+}
+.margin-right-lg {
+    margin-right: 80px;
+}
+.margin-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+/* ------- Alignment -------- */
+.center {
+    justify-content: center;
+}
+.align-center {
+    align-items: center;
+}
+
+.left {
+    justify-content: left;
+    align-items: flex-start;
+}
+.right {
+    justify-content: right;
+    align-items: flex-end;
+}
+.space-lg {
+    justify-content: space-between;
+}
+.space-md {
+    justify-content: space-evenly;
+}
+
+/* --------- Misc ----------- */
+.underline-sm {
+    width: 250px;
+    height: 1px;
+    background-color: var(--background-tan);
+}
+.underline-md {
+    width: 350px;
+    height: 1px;
+    background-color: var(--background-tan);
+}
+.underline-lg {
+    width: 550px;
+    height: 1px;
+    background-color: var(--background-tan);
+}
+
+/* --------- Color ---------- */
+.tan {
+    background-color: var(--background-tan);
+}
+.white {
+    background-color: var(--background-white);
+}
+
+.fc-light {
+    color: var(--font-light-grey);
+}
+
+/* --------- Resize --------- */
+.resize-sm {
+    width: 20vw;
+}
+.resize-md {
+    width: 40vw;
+}
+.resize-lg {
+    width: 70vw;
+}
+.resize-fill {
+    width: 100%;
+}
+
+.font-very-sm {
+    font-size: 0.75rem;
+}
+
+/* --------- Border --------- */
+.border-sm {
+    border: solid 1px var(--font-light-grey);
 }
